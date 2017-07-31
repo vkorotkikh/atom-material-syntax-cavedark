@@ -1,0 +1,130 @@
+[data-grammar*="gfm"]::shadow {
+    .markup.underline.link {
+        color: lighten(#ff5370, 10%);
+
+        span.punctuation {
+            color: #ff5370;
+        }
+    }
+    .markup.strike {
+        position: relative;
+        color: fade(@syntax-text-color, 50%);
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(50% + 4px);
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: fade(@syntax-text-color, 20%);
+        }
+    }
+    .table .border {
+        color: fade(@syntax-text-color, 50%);
+    }
+    .markup.heading {
+        color: #82b1ff;
+    }
+    .punctuation.definition.begin,
+    .punctuation.definition.end {
+        color: #82b1ff;
+    }
+    .punctuation.definition.begin + span:not(.function.parameter) {
+        color: lighten(#82b1ff, 5%);
+    }
+}
+.bracket-matcher .region {
+    // border-bottom: 1px solid @syntax-cursor-color;
+    border-bottom: 1px solid fade(@syntax-bracket-focus,70%);
+    box-sizing: border-box;
+    text-align: center;
+    // background-color: fade(@syntax-text-color, 10%);
+    background-color: fade(@syntax-bracket-focus, 60%);
+    box-shadow: inset 0 -1px 0 @syntax-cursor-color;
+    z-index: 100;
+}
+atom-text-editor.is-focused .selection .region,
+:host(.is-focused) .selection .region {
+    background-color: @syntax-selection-color;
+    border-radius: 0.125rem;
+}
+.variable {
+    &.instance, &.instance > * {
+        color: #ff5370;
+    }
+}
+.meta {
+    &.delimiter.period {
+        color: #c792ea;
+    }
+    &.brace {
+        color: #89DDFF;
+    }
+    &.tag.doctype {
+        color: #c792ea;
+    }
+    .string.quoted {
+        color: #C3E88D;
+    }
+    &.array.json .string.quoted {
+        color: #80CBC4;
+
+        > * {
+            color: currentColor;
+        }
+    }
+    .punctuation.separator.key-value + .string.quoted {
+        color: #80CBC4;
+
+        * {
+            color: currentColor;
+        }
+    }
+    &.structure.dictionary .string.quoted {
+        color: #C3E88D;
+
+        .punctuation.string {
+            color: currentColor;
+        }
+    }
+}
+.support.constant {
+    color: #89DDFF;
+}
+.keyword {
+    &.operator {
+        &.logical, &.comparison, &.assignment {
+            color: #c792ea;
+        }
+    }
+}
+.punctuation.section.embedded, .variable.interpolation {
+    .source.php {
+        color: currentColor;
+    }
+}
+
+//cursor line
+.line-number{
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-left:2px solid transparent;
+
+    &.cursor-line{
+        color: lighten(#5CAEF2, 1%) !important;
+        border-color:lighten(#5CAEF2, 1%);
+    }
+}
+
+//highlights
+atom-text-editor.editor .highlight {
+  &.find-result .region {
+    background:transparent;
+    border:1px solid #5CAEF2;
+    border-radius:0;
+    box-shadow:0 0 1px 1px #5CAEF2,0 0 8px 0 #5CAEF2 inset;
+  }
+}
