@@ -1,15 +1,15 @@
 {
-  "name": "atom-material-syntax-dark",
+  "name": "atom-material-syntax-cavedark",
   "theme": "syntax",
-  "version": "0.2.7",
-  "description": "A darker syntax theme for Atom that uses Google's Material Design color palette",
+  "version": "1.0",
+  "description": "Customized material dark syntax for Atom that uses Google's Material Design color palette",
   "keywords": [
     "syntax",
     "theme",
     "material",
     "material design"
   ],
-  "repository": "https://github.com/silvestreh/atom-material-syntax-dark",
+  "repository": "https://github.com/silvestreh/atom-material-syntax-cavedark",
   "license": "MIT",
   "engines": {
     "atom": ">=1.13.0 <2.0.0"
